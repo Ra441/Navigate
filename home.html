@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+    <div class="homeBody">
+        <div class="navBar">
+            <img id="homeLogoimg" src="/images/mylogo.png" >
+            <p>NAVIGATE</p>
+            <ul>
+                <li> <button id="logoutBtn">LOG OUT</button> </li>
+                <li> 
+                    <div id="dropdown">
+                        <button id="menubtn"><i class="fa fa-bars"></i></button>
+                        <div class="menu">
+                        <a href="/ProdTbl.html">Inventory Managment</a>
+                        <a href="/billingPage.html">Billing Management</a>
+                        <a href="https://console.firebase.google.com/u/0/project/loginform-db050/authentication/users">Link to Firebase</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="btnContent">
+            <pre>
+               Manage your store
+               efficiently through NAVIGATE
+               Store Management System
+            </pre>
+            <div class="btntags">
+                <a href="./ProdTbl.html"><button id="pmbtn" type="button">Product Management</button></a>
+                <a href="./billingPage.html"><button id="cmbtn" type="button">Bill Management</button></a>
+            </div>
+        </div>
+
+        <div class="homeImg">
+            <img id="managementImg" src="/images/management.png"/>
+        </div>
+    </div>
+
+    <!--------------------------------------Scripts----------------------------------------------------------->
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"></script>
+    <script type="module" src="app.js"></script>
+    <script type="module" src="home.js"></script>
+
+</body>
+</html>

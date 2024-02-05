@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <style>label{display: inline-block; width: 80px; padding-bottom: 5px;}</style>
+</head>
+<body>
+    <label>Product ID</label><input id="pId" type="text"><br>
+    <label>Product Name</label><input id="pName" type="text"><br>
+    <label>Category</label><input id="category" type="text"><br>
+    <label>Weight</label><input id="weight" type="text"><br>
+    <label>Price(Rs.)</label><input id="price" type="number"><br>
+    <label>Sale(%)</label><input id="sale" type="number"><br>
+    <label>Brand</label><input id="brand" type="text"><br>
+    <label>Supplier id</label><input id="supId" type="text"><br>
+    <label>Block ID</label><input id="blockId" type="number"><br>
+    <label>Rack No.</label><input id="rackNo" type="number"><br>
+    <label>Shelf No.</label><input id="shelfNo" type="number"><br>
+    <br>
+    <button type="submit" id="insertbtn">INSERT</button>
+    <button type="submit" id="fetchbtn">SEARCH</button>
+    <button type="submit" id="updatebtn">UPDATE</button>
+    <button type="submit" id="deletebtn">DELETE</button>
+
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"></script>
+    <script type="module" src="app.js"></script>
+    <script type="module" src="product.js"></script>
+    <!-- <script type="module" src="ProdTbl.js"></script> -->
+
+
+</body>
+</html>

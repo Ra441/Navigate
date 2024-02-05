@@ -1,0 +1,158 @@
+*{
+    /* font-family:Arial, Helvetica, sans-serif; */
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    display: flex;
+    /* overflow-x: hidden; */
+}
+.navBar{
+    position:fixed;
+    height: 12vh;
+    width: 100vw;
+    background-color: rgba(27, 64, 99, 0.952);
+    z-index: 100;
+}
+/* .navBar ul, #logoutBtn, #menuBtn{
+    display: inline-block;
+} */
+#homeLogoimg{
+    position: absolute;
+    border-radius: 50%;
+    top: 15px;
+    left: 60px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+}
+.navBar p{
+    color: white;
+    position: absolute;
+    font-style: normal;
+    font-size: large;
+    font-weight: bold;
+    top: 35%;
+    left: 10%;
+    letter-spacing: 2px;
+}
+.navBar ul{
+    margin-top: 25px;
+    margin-left: 85%;
+}
+.navBar ul li{
+    display: inline;
+}
+#logoutBtn{
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    left: 15px;
+    background: none;
+    font-size: medium;
+    font-weight: bold;
+}
+#logoutBtn:hover{
+    color: rgb(250, 124, 115);
+}
+#menubtn{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: medium;
+}
+#dropdown{
+    overflow: hidden;
+    display: inline;
+}
+
+#menubtn:hover{
+    color: rgb(250, 124, 115);
+}
+.menu{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: rgb(233, 115, 107);
+}
+  
+  /* Links inside the dropdown */
+.menu a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+  /* Add a grey background color to dropdown links on hover */
+.menu a:hover {
+    background-color: rgb(177, 88, 82);
+}
+  /* Show the dropdown menu on hover */
+#dropdown:hover .menu{
+    display: block;
+}
+
+.container{
+    position: absolute;
+    top: 15%;
+}
+.container p{
+    font-size: large;
+    font-weight: bold;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+.BillingTbl{
+    position: relative;
+    top: 30%;
+    left: 10%;
+    right: 5%;
+}
+.table, tr{
+    font-size: small;
+    border-color: black;
+}
+.controlBtns{
+    margin-left: 50px;
+}
+#appendList,#createBill{
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+#totalBillAmount{
+    background-color: bisque;
+    margin-top: 50px;
+    margin-left: 50px;
+    font-size: large;
+}
+#totalBillAmount, #totalBill{
+    display: inline-block;
+}
+#appendList{
+    background-color: rgb(233, 115, 107);
+    border-color: rgb(216, 106, 98);
+    color: white;
+    padding: 2px 5px;
+    font-style:normal;
+    font-size: medium;
+}
+#appendList:hover{
+    background-color: white;
+    color: rgb(233, 115, 107);
+}
+#createBill{
+    background-color: rgb(233, 115, 107);
+    border-color: rgb(216, 106, 98);
+    color: white;
+    padding: 2px 5px;
+    font-style:normal;
+    font-size: medium;
+}
+#createBill:hover{
+    background-color: white;
+    color: rgb(233, 115, 107);
+}

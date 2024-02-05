@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Table Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="ProdTbl.css">
+</head>
+<body>
+<div class="prodPageBody">
+  <!-----------------------------------Navigation Bar--------------------------------->
+  <div class="navBar">
+    <img id="homeLogoimg" src="/images/mylogo.png" >
+    <p>NAVIGATE</p>
+    <ul>
+        <li> <button id="logoutBtn">LOG OUT</button> </li>
+        <li> 
+            <div id="dropdown">
+                <button id="menubtn"><i class="fa fa-bars"></i></button>
+                <div class="menu">
+                <a href="/home.html">Home Page</a>
+                <a href="/billingPage.html">Bill Management</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+  </div>
+  <div class="container" >
+  <!----------------------------------Search Bar Div------------------------------->
+    <div class="input-group">
+        <input id="searchBar" type="text" class="form-control" placeholder="Search item" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <select class="custom-select" id="selectionCategory">
+              <option selected value="1">Product ID</option>
+              <option value="2">Product Name</option>
+              <option value="3">Category</option>
+              <option value="4">Block ID</option>
+          </select>
+          <button id="searchBtn" class="btn btn-outline-primary" type="button">Search</button>
+          <button id="addRecbtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="FillData(null)">Add Record</button>
+        </div>
+    </div>
+  </div>
+  <!--------------------------------Table Content--------------------------------->
+  <div class="tbl">
+    <table class="table" >
+        <thead>
+            <th>Sr No.</th>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Weight/item</th>
+            <th>Quantity</th>
+            <th>Price(Rs.)</th>
+            <th>Sale(%)</th>
+            <th>Updated Sale Price(Rs.)</th>
+            <th>Brand</th>
+            <th>Supplier Id</th>
+            <th>Block ID</th>
+            <th>Rack No.</th>
+            <th>Shelf No.</th>
+            <th>Control Center</th>
+        </thead>
+        <tbody id="tbody1">
+        </tbody>
+    </table>
+  </div>
+ 
+  <!------------------------------------------Edit Model Div------------------------------------------------>
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Product Record</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+        <div class="modal-body">   <!--Here we will add section fields for the model window-->
+          <label class="modelLabel">Product ID</label>   <input id="pId" type="text" required/><br>
+          <label class="modelLabel">Product Name</label> <input id="pName" type="text" required/><br>
+         <label class="modelLabel">Category</label>     <!--<input id="category" type="text" required/><br> -->
+          <select id="category" required>
+            <option value="Fruits">Fruits</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Meat">Meat</option>
+            <option value="Cosmatics">Cosmatics</option>
+            <option value="Sea Food">Sea Food</option>
+            <option value="Spicies, Salts & Sugars">Spicies, Salts & Sugars</option>
+            <option value="Oil & Ghee">Oil & Ghee</option>
+            <option value="Baking & Dessert">Baking & Dessert</option>
+            <option value="Beverages">Beverages</option>
+            <option value="Bakery & Dairy">Bakery & Dairy</option>
+            <option value="Home Care">Home Care</option>
+            <option value="Pulses, Rice & Flour">Pulses, Rice & Flour</option>
+            <option value="Pet Care">Pet Care</option>
+        </select><br>
+          <label class="modelLabel">Weight</label>       <input id="weight" type="text" required/><br>
+          <label class="modelLabel">Quantity</label>     <input id="quantity" type="text" required/><br>
+          <label class="modelLabel">Price(Rs.)</label>   <input id="price" type="number" required/><br>
+          <label class="modelLabel">Sale(%)</label>      <input id="sale" type="number" required/><br>
+          <label class="modelLabel">Updated Sale(Rs.)</label> <input id="updatedPrice" type="text" required/><br>
+          <label class="modelLabel">Brand</label>       
+          <select id="brand" >
+            <option value="No Brand">No Brand</option>
+            <option value="Sobroso">Sobroso</option>
+            <option value="Chop Shop">Chop Shop</option>
+            <option value="Silver Sea Food">Silver Sea Food</option>
+            <option value="Moiz Foods">Moiz Foods</option>
+            <option value="Saremco Internationals">Saremco Internationals</option>
+            <option value="National">National</option>
+            <option value="Dalda">Dalda</option>
+            <option value="Habib">Habib</option>
+            <option value="Raffan">Raffan</option>
+            <option value="Youngs">Youngs</option>
+            <option value="Shangrilla">Shangrilla</option>
+            <option value="Knor">Knor</option>
+            <option value="Hersheys">Hersheys</option>
+            <option value="Choco Bliss Crave">Choco Bliss Crave</option>
+            <option value="Food Net">Food Net</option>
+            <option value="Klim">Klim</option>
+            <option value="Anaaj Yousuf">Anaaj Yousuf</option>
+            <option value="Gaurd Supreme">Gaurd Supreme</option>
+            <option value="Khalis">Khalis</option>
+            <option value="Sunridge">Sunridge</option>
+            <option value="Nivea">Nivea</option>
+            <option value="Vaseline">Vaseline</option>
+            <option value="Dove">Dove</option>
+            <option value="Dettol">Dettol</option>
+            <option value="Protex">Protex</option>
+            <option value="Colgate">Colgate</option>
+            <option value="Head & Shoulders">Head & Shoulders</option>
+            <option value="Sensodyne">Sensodyne</option>
+            <option value="Sateen">Sateen</option>
+            <option value="Surf Excel">Surf Excel</option>
+            <option value="Canbebe">Canbebe</option>
+            <option value="Olpers">Olpers</option>
+            <option value="Milk Pack">Milk Pack</option>
+            <option value="Adams">Adams</option>
+            <option value="Nestle">Nestle</option>
+            <option value="Sprite">Sprite</option>
+            <option value="K&N's">K&N's</option>
+            <option value="Opa">Opa</option>
+            <option value="Me-O">Me-O</option>
+            <option value="Seasons Woof">Seasons Woof</option>
+        </select><br>
+          <label  class="modelLabel" >Supplier id</label>
+          <select id="supId" required> </select><br>
+
+          <label class="modelLabel">Block ID</label>   
+          <select id="blockId"  onclick="func()" required>
+              <option value="1">Fruits</option>
+              <option value="2">Vegetables</option>
+              <option value="3">Meat</option>
+              <option value="4">Cosmatics</option>
+              <option value="5">Fish & Sea Food</option>
+              <option value="6">Spicies, Salts & Sugars</option>
+              <option value="7">Oil & Ghee</option>
+              <option value="8">Baking & Dessert</option>
+              <option value="9">Beverages</option>
+              <option value="10">Bakery & Dairy</option>
+              <option value="11">Home Care</option>
+              <option value="12">Pulses, Rice & Flour</option> 
+              <option value="13">Pet Care</option>
+          </select><br>
+          <label class="modelLabel">Rack No.</label>     <!--<input id="rackNo" type="number"><br>-->
+          <select id="rackNo" required> </select><br>
+
+          <label class="modelLabel">Shelf No.</label>    <!--<input id="shelfNo" type="number"><br>-->
+          <select id="shelfNo" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            
+
+          </select><br>
+        </div>
+        <div class="modal-footer">
+          <button id="addRec" type="submit" class="btn btn-primary" data-dismiss="modal" onsubmit="addRecord()">Add Record</button>
+          <button id="updateRec" type="submit" class="btn btn-primary " data-dismiss="modal" onsubmit="updateRecord()">Update Record</button>
+          <button id="deleteRec" type="submit" class="btn btn-secondary" data-dismiss="modal" onsubmit="deleteRecord()">Delete Record</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!---------------------------------------Scripts Section------------------------------------------------------->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"></script>
+    <script type="module" src="app.js"></script>
+    <script type="module" src="/ProdTbl.js"></script>
+</body>
+</html>
